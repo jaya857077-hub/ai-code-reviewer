@@ -3,24 +3,24 @@ from openai import OpenAI
 
 # OpenRouter API
 client = OpenAI(
-    api_key=st.secrets["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"],
+    api_key=st.secrets["OPENROUTER_API_KEY"],
     base_url="https://openrouter.ai/api/v1"
 )
 
 def review_code(code):
     prompt = f"""
-    You are an AI code reviewer for students.
+You are an AI code reviewer for students.
 
-    Analyze the code and provide:
-    1. Syntax Errors
-    2. Logical Errors
-    3. Simple Explanation
-    4. Suggestions
-    5. Improved Code
+Analyze the code and provide:
+1. Syntax Errors
+2. Logical Errors
+3. Simple Explanation
+4. Suggestions
+5. Improved Code
 
-    Code:
-    {code}
-    """
+Code:
+{code}
+"""
 
     response = client.chat.completions.create(
         model="openai/gpt-4o-mini",
