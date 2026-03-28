@@ -23,7 +23,7 @@ Code:
 """
 
     response = client.chat.completions.create(
-        model="openai/gpt-4o-mini",
+        model="openai/gpt-4o-mini-2024-09-12",
         messages=[
             {"role": "system", "content": "You are a helpful code reviewer."},
             {"role": "user", "content": prompt}
